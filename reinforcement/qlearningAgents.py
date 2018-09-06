@@ -199,20 +199,22 @@ class ApproximateQAgent(PacmanQAgent):
         """
            Should update your weights based on transition
         """
-
         diff = (reward + self.discount*self.getValue(nextState)) - self.getQValue(state, action)
 
         features = self.featExtractor.getFeatures(state, action) 
         for f in features:
           self.weights[f] += self.alpha*diff*features[f]
 
+
     def final(self, state):
         "Called at the end of each game."
         # call the super-class final method
         PacmanQAgent.final(self, state)
 
+        # print (self.weights)
+
         # did we finish training?
         if self.episodesSoFar == self.numTraining:
             # you might want to print your weights here for debugging
-            "*** YOUR CODE HERE ***"
+            print (self.weights)
             pass
