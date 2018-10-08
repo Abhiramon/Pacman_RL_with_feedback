@@ -177,7 +177,7 @@ class SimpleExtractorPellet(FeatureExtractor):
         features["#-of-non-scared-ghosts-1-step-away"] = sum((next_x, next_y) in Actions.getLegalNeighbors(ghosts[g], walls) for g in range(len(ghosts)) if ghostScaredTime(g+1,state) <= 0)
 
         # if there is no danger of ghosts then add the food feature
-        if not features["#-of-ghosts-1-step-away"] and food[next_x][next_y]:
+        if not features["#-of-non-scared-ghosts-1-step-away"] and food[next_x][next_y]:
             features["eats-food"] = 1.0
 
         dist = closestFood((next_x, next_y), food, walls)
@@ -195,3 +195,9 @@ class SimpleExtractorPellet(FeatureExtractor):
 
 
         return features
+
+    def getFeatureDescriptions(self):
+        return ["bias","run into scared ghosts 1 step away", "run into non-scared ghosts 1 step away", "eat food", "distance to closest food", "hunt scared ghost"]
+
+    def getFeatureNames(self):
+        return ["bias","#-of-scared-ghosts-1-step-away", "#-of-non-scared-ghosts-1-step-away", "eats-food", "closest-food", "scaredTime-ghostDist"]

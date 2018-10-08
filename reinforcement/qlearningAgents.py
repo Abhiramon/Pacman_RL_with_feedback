@@ -17,6 +17,7 @@ from learningAgents import ReinforcementAgent
 from featureExtractors import *
 
 import random,util,math,sys
+import query
 
 class QLearningAgent(ReinforcementAgent):
     """
@@ -175,6 +176,7 @@ class ApproximateQAgent(PacmanQAgent):
         self.featExtractor = util.lookup(extractor, globals())()
         PacmanQAgent.__init__(self, **args)
         self.weights = util.Counter()
+        self.query_budget = 5
 
 
     def getWeights(self):
@@ -210,11 +212,40 @@ class ApproximateQAgent(PacmanQAgent):
         "Called at the end of each game."
         # call the super-class final method
         PacmanQAgent.final(self, state)
+        if self.query_budget>0:
+          self.query_budget-=1
+          print "\nFeature weights before update: "
+          print self.weights
+          print "\n"
 
-        # print (self.weights)
+          feature_names = self.featExtractor.getFeatureNames()
+          query_list =query.queryUser(self.featExtractor.getFeatureDescriptions())
+
+
+          for i in range(len(query_list)):
+            weight_update = self.queryWeightIncrement(self.weights[feature_names[i]], query_list[i])
+            if weight_update != None:
+              self.weights[feature_names[i]]+= weight_update
+
+        print "\nFeature weights after update: "
+        print self.weights
+        print "\n"
 
         # did we finish training?
         if self.episodesSoFar == self.numTraining:
             # you might want to print your weights here for debugging
-            print (self.weights)
             pass
+    def queryWeightIncrement(self, weight, sign):
+
+        if weight == 0.0:
+          weight = 2.0
+        
+        weight_mod = abs(weight)
+        weight_increment = weight_mod/2
+
+
+        if sign == "+":
+          return weight_increment
+        elif sign == '-':
+          return -weight_increment
+
