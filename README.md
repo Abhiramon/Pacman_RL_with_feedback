@@ -9,11 +9,11 @@ The program uses Approximate Q learning algorithm for reinforcement learning. Ad
 Requires Python2
 
 ## Usage instructions
-*Normal game can be run using "python pacman.py"
-*To run the Approximate Q Learning agent use: "python2 pacman.py -p ApproximateQAgent -a extractor=SimpleExtractorPellet -x 0 -n 4 -l mediumClassic" where 0 is for number of training runs and 4 is for total number of runs. This command can also be run using "bash run.sh"
-*Option: Read from file - is for loading feature weights from previous run
-*Option: Write to file - is for storing weights after runs to lead next time
-*Option: Explore - To choose a random action with a probability (Required for learning).
-*Option: Use queries - To give feedback after next 3 games
-*(Use f, t, t, f to run Approximate Q Learning algo without queries and write weights to file)
-*(Use t, f, f, t to run the algo. with feedback and load weights from previous run)
+* Normal game can be run using "python pacman.py"
+* To run the Approximate Q Learning agent use: "python2 pacman.py -p ApproximateQAgent -a extractor=SimpleExtractorPellet -x 0 -n 4 -l mediumClassic" where 0 is for number of training runs and 4 is for total number of runs. This command can also be run using "bash run.sh"
+* Option: Read from file - is for loading feature weights from previous run
+* Option: Write to file - is for storing weights after runs to lead next time
+* Option: Explore - To choose a random action with a probability (Required for learning).
+* Option: Use queries - To give feedback after next 3 games
+* (Use f, t, t, f to run Approximate Q Learning algo without queries and write weights to file)
+* (Use t, f, f, t to run the algo. with feedback and load weights from previous run)
