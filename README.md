@@ -16,8 +16,29 @@ Requires Python2
 * Option: Write to file - is for storing weights after runs to lead next time
 * Option: Explore - To choose a random action with a probability (Required for learning).
 * Option: Use queries - To give feedback after next 3 games
-* (Use f, t, t, f to run Approximate Q Learning algo without queries and write weights to file)
-* (Use t, f, f, t to run the algo. with feedback and load weights from previous run)
+* (To run RL without feedback use: f, f, t, f )
+* (To run RL with feedback use: f, f, t, t )
+
+## Feedback mechanism
+Feedback can be provided by adding/decreasing importance of following:
+1. bias
+2. run into scared ghosts 1 step away
+3. run into non-scared ghosts 1 step away
+4. eat food
+5. distance to closest food
+6. hunt scared ghost
+To increase importance of a feature use +, to decrease importance use -.\
+For example:\
+* 6 + (Increase importance of hunting scared ghost)
+* 3 - (Increase importance of running from normal ghost)
+* -1 -1 (End of feedback)
+
+## Experiments with feedback
+1. Use f, t, t, f to run with exploration, without feedback and write weights to file. (We used this for 3 episodes to allow agent to learn some basic rules)
+2. Use t, f, f, t to load weights and use feedback without exploration. (We used this for 4 episodes to test feedback mechanism)
+3. Use t, f, f, f to load same weights and run without feedback or exploration. (We ran this 4 times as well)
+(Comparision of performance in 2 and 3 will show the effect of using feedback) 
+(The results of our experiments are documented in results.txt)
 
 ## Developed by
 Abhiramon R. and Suraj Singh
