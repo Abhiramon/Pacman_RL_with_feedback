@@ -27,8 +27,9 @@ Feedback can be provided by adding/decreasing importance of following:
 4. eat food
 5. distance to closest food
 6. hunt scared ghost
-To increase importance of a feature use +, to decrease importance use -. \\
-For example: \\ 
+To increase importance of a feature use *+*, to decrease importance use *-*.
+
+For example:  
 * 6 + (Increase importance of hunting scared ghost)
 * 3 - (Increase importance of running from normal ghost)
 * -1 -1 (End of feedback)
@@ -37,7 +38,9 @@ For example: \\
 1. Use f, t, t, f to run with exploration, without feedback and write weights to file. (We used this for 3 episodes to allow agent to learn some basic rules)
 2. Use t, f, f, t to load weights and use feedback without exploration. (We used this for 4 episodes to test feedback mechanism)
 3. Use t, f, f, f to load same weights and run without feedback or exploration. (We ran this 4 times as well)
-Comparision of performance in 2 and 3 will show the effect of using feedback. \\
+
+Comparision of performance in 2 and 3 will show the effect of using feedback.
+
 The results of our experiments are documented in results.txt
 
 ## Developed by
