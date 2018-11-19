@@ -16,13 +16,13 @@ def queryUser(feature_names):
 	return input_list
 
 def write_to_file(dict):
-	file = open("temp_weights.txt", "w")
+	file = open("stored_weights.txt", "w")
 	for f in dict:
 		file.write(f+" "+str(dict[f])+"\n")
 	file.close()
 
 def read_from_file():
-	file = open("temp_weights.txt", "r")
+	file = open("stored_weights.txt", "r")
 	dict = {}
 	for line in file.readlines():
 		f, val  = line.strip().split()

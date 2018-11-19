@@ -27,6 +27,7 @@ Feedback can be provided by adding/decreasing importance of following:
 4. eat food
 5. distance to closest food
 6. hunt scared ghost
+
 To increase importance of a feature use *+*, to decrease importance use *-*.
 
 For example:  
