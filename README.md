@@ -1,4 +1,4 @@
-# AI_Project
+# Pacman_RL_with_feedback
 Reinforcement learning with human feedback implemented in Pacman environment
 
 ## About
