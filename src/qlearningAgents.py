@@ -176,6 +176,66 @@ class ApproximateQAgent(PacmanQAgent):
         self.featExtractor = util.lookup(extractor, globals())()
         PacmanQAgent.__init__(self, **args)
         self.weights = util.Counter()
+      
+
+    def getWeights(self):
+        return self.weights
+
+    def getQValue(self, state, action):
+        """
+          Should return Q(state,action) = w * featureVector
+          where * is the dotProduct operator
+        """
+
+        q_val = 0
+        features = self.featExtractor.getFeatures(state, action)
+        
+        for f in features:
+          q_val+=self.weights[f]*features[f]
+
+
+        return q_val
+
+
+    def update(self, state, action, nextState, reward):
+        """
+           Should update your weights based on transition
+        """
+        diff = (reward + self.discount*self.getValue(nextState)) - self.getQValue(state, action)
+
+        features = self.featExtractor.getFeatures(state, action) 
+        for f in features:
+          self.weights[f] += self.alpha*diff*features[f]
+
+
+    def final(self, state):
+        "Called at the end of each game."
+        # call the super-class final method
+        # print "\nFeature weights: "
+        # print self.weights
+        # print "\n"
+        PacmanQAgent.final(self, state)
+
+        # did we finish training?
+        if self.episodesSoFar == self.numTraining:
+            # you might want to print your weights here for debugging
+            pass
+
+
+
+
+class ApproximateQAgentFeedback(PacmanQAgent):
+    """
+       ApproximateQLearningAgent
+
+       You should only have to overwrite getQValue
+       and update.  All other QLearningAgent functions
+       should work as is.
+    """
+    def __init__(self, extractor='IdentityExtractor', **args):
+        self.featExtractor = util.lookup(extractor, globals())()
+        PacmanQAgent.__init__(self, **args)
+        self.weights = util.Counter()
         self.query_budget = 3
         self.use_queries = None
         self.explore = None
