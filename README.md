@@ -11,7 +11,7 @@ Requires Python2
 ## Usage instructions
 * Move into src directory using "cd src"
 * Normal Pacman game can be run using "python2 pacman.py"
-* To let Pacman train and show what it leant use: : "bash run_q_learning.sh" or "python2 pacman.py -p ApproximateQAgent -a extractor=SimpleExtractorPellet -x 10 -n 11 -l mediumClassic"
+* To let Pacman train and show what it learnt use: "bash run_q_learning.sh" or "python2 pacman.py -p ApproximateQAgent -a extractor=SimpleExtractorPellet -x 10 -n 11 -l mediumClassic"
 * To run the program with feedback mode enabled use: "bash run_feedback_mode.sh" or "python2 pacman.py -p ApproximateQAgentFeedback -a extractor=SimpleExtractorPellet -x 0 -n 4 -l mediumClassic"
 
 
