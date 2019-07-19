@@ -12,7 +12,7 @@
 Experiment: We ran the program 3 times first (with exploration on) and stored weights. The next 4 times, we loaded the same weights and ran with and without queries (with exploration off). The following are the scores:
 (Note: For each run, average is computed for the last three episodes only)
 
-(Command used: python2 pacman.py -p ApproximateQAgent -a extractor=SimpleExtractorPellet -x 0 -n 4 -l mediumClassic)
+(Command used: python2 pacman.py -p ApproximateQAgentFeedback -a extractor=SimpleExtractorPellet -x 0 -n 4 -l mediumClassic)
 
 ------------
 Run 1:

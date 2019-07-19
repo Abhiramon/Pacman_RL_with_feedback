@@ -3,7 +3,7 @@ Reinforcement learning (Q learning with function approximation) with human feedb
 
 ## About
 This work is built upon the UC Berkley's Pacman environment (http://ai.berkeley.edu/home.html).
-In this program, we teach Pacman to play the game by itself using Q learning with function approximation algorithm. Human feedback can be provided in the form of weight adjustments for the features to guide learning. Over 36 trial runs, with and without feedback, we recorded an improvement of about 20 percent in score using the feedback mechanism. An introduction to the concepts involved from Markov Decison Process (MDP) to Q-learning with function approximation can be found in the Theory.pdf.
+In this program, we teach Pacman to play the game by itself using Q learning with function approximation algorithm. Human feedback can be provided in the form of weight adjustments for the features to guide learning. Over 36 trial runs, with and without feedback, we recorded an improvement of about 20 percent in score using the feedback mechanism. An introduction to the concepts involved from Markov Decison Process (MDP) to Q-learning with function approximation (focussing on the Pacman agent) can be found in the Theory.pdf.
 
 ## Prerequisites
 Requires Python2
@@ -18,9 +18,9 @@ Requires Python2
 ## Experiments with feedback
 
 * Option: Read from file - is for loading feature weights from previous run
-* Option: Write to file - is for storing weights after runs to lead next time
-* Option: Explore - To choose a random action with a probability (Required for learning).
-* Option: Use queries - To give feedback for next 3 games
+* Option: Write to file - is for storing weights after runs to read next time
+* Option: Explore - to choose a random action with a probability (Required for learning).
+* Option: Use queries - to give feedback for next 3 games
 
 1. Use f, t, t, f to run with exploration, without feedback and write weights to file. (We used this for 3 episodes to allow agent to learn some basic rules)
 2. Use t, f, f, t to load weights and use feedback without exploration. (We used this for 4 episodes to test feedback mechanism)
