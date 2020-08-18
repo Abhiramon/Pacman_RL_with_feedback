@@ -7,11 +7,7 @@ In this program, we teach Pacman to play the game by itself using Q learning wit
 
 ## Demo after learning with Feedback
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="video/pacman.mp4" type="video/mp4">
-  </video>
-</figure>
+![Alt Text](gif/pacman.gif)
 
 ## Setup
 Requires Python2
