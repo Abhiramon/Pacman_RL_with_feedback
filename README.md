@@ -5,7 +5,15 @@ Reinforcement learning (Q learning with function approximation) with human feedb
 This work is built upon the UC Berkley's Pacman environment (http://ai.berkeley.edu/home.html).
 In this program, we teach Pacman to play the game by itself using Q learning with function approximation algorithm. Human feedback can be provided in the form of weight adjustments for the features to guide learning. Over 36 trial runs, with and without feedback, we recorded an improvement of about 20 percent in score using the feedback mechanism. An introduction to the concepts involved from Markov Decison Process (MDP) to Q-learning with function approximation (focussing on the Pacman agent) can be found in the Theory.pdf.
 
-## Prerequisites
+## Demo after learning with Feedback
+
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="video/pacman.mp4" type="video/mp4">
+  </video>
+</figure>
+
+## Setup
 Requires Python2
 
 ## Usage instructions
